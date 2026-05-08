@@ -8,6 +8,6 @@
     "verify-data": "node scripts/verify-data.js"
   },
   "dependencies": {
-    "@vercel/functions": "^3.1.0"
+    "@vercel/functions": "latest"
   }
 }

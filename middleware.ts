@@ -17,7 +17,7 @@ function decodeBasicAuth(header: string | null) {
   if (!header || !header.startsWith("Basic ")) return null;
 
   try {
-    const decoded = atob(header.slice(6));
+    const decoded = decodeBase64(header.slice(6));
     const separator = decoded.indexOf(":");
     if (separator === -1) return null;
     return {
@@ -27,6 +27,10 @@ function decodeBasicAuth(header: string | null) {
   } catch {
     return null;
   }
+}
+
+function decodeBase64(value: string) {
+  return atob(value);
 }
 
 export default function middleware(request: Request) {
