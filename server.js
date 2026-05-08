@@ -2,9 +2,9 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const root = __dirname;
+const root = path.join(__dirname, "public");
 const startPort = Number(process.env.PORT || 4173);
-const portFile = path.join(root, ".server-port");
+const portFile = path.join(__dirname, ".server-port");
 const username = process.env.AUTH_USER || "wilderson@protonsconsultoria.com";
 const password = process.env.AUTH_PASS || "Protons1";
 

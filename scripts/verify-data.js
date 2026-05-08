@@ -3,7 +3,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..", "..");
 const exportRoot = path.join(root, "tmp", "chats-exports");
-const dataRoot = path.join(root, "digisac-viewer", "data");
+const dataRoot = path.join(root, "digisac-viewer", "public", "data");
 const indexFile = path.join(dataRoot, "index.json");
 const chatsDir = path.join(dataRoot, "chats");
 

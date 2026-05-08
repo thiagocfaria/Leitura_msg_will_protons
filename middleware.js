@@ -1,7 +1,8 @@
 import { next } from "@vercel/functions";
 
-const USERNAME = process.env.AUTH_USER || "wilderson@protonsconsultoria.com";
-const PASSWORD = process.env.AUTH_PASS || "Protons1";
+const env = globalThis.process?.env || {};
+const USERNAME = env.AUTH_USER || "wilderson@protonsconsultoria.com";
+const PASSWORD = env.AUTH_PASS || "Protons1";
 
 function unauthorized() {
   return new Response("Autenticacao obrigatoria", {

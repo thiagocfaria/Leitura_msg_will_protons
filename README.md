@@ -28,7 +28,7 @@ Protons1
 node scripts\prepare-data.js
 ```
 
-O script le `..\tmp\chats-exports`, gera `data\index.json` e cria um arquivo JSON separado para cada conversa em `data\chats`.
+O script le `..\tmp\chats-exports`, gera `public\data\index.json` e cria um arquivo JSON separado para cada conversa em `public\data\chats`.
 
 ## Vercel
 
