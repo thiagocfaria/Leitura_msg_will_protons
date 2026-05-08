@@ -13,11 +13,11 @@ function unauthorized() {
   });
 }
 
-function decodeBasicAuth(header: string | null) {
+function decodeBasicAuth(header) {
   if (!header || !header.startsWith("Basic ")) return null;
 
   try {
-    const decoded = decodeBase64(header.slice(6));
+    const decoded = atob(header.slice(6));
     const separator = decoded.indexOf(":");
     if (separator === -1) return null;
     return {
@@ -29,11 +29,7 @@ function decodeBasicAuth(header: string | null) {
   }
 }
 
-function decodeBase64(value: string) {
-  return atob(value);
-}
-
-export default function middleware(request: Request) {
+export default function middleware(request) {
   const credentials = decodeBasicAuth(request.headers.get("authorization"));
 
   if (!credentials || credentials.username !== USERNAME || credentials.password !== PASSWORD) {
