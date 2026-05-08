@@ -5,8 +5,8 @@ const path = require("path");
 const root = path.join(__dirname, "public");
 const startPort = Number(process.env.PORT || 4173);
 const portFile = path.join(__dirname, ".server-port");
-const username = process.env.AUTH_USER || "wilderson@protonsconsultoria.com";
-const password = process.env.AUTH_PASS || "Protons1";
+const username = process.env.AUTH_USER;
+const password = process.env.AUTH_PASS;
 
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -23,6 +23,8 @@ function send(res, status, body, type = "text/plain; charset=utf-8") {
 }
 
 function authorized(req) {
+  if (!username || !password) return false;
+
   const header = req.headers.authorization || "";
   if (!header.startsWith("Basic ")) return false;
 
