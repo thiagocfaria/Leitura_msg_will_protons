@@ -1,0 +1,13 @@
+{
+  "name": "digisac-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "prepare-data": "node scripts/prepare-data.js",
+    "verify-data": "node scripts/verify-data.js"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.1.0"
+  }
+}

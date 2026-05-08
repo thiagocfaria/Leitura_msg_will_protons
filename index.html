@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROTONS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <aside class="sidebar">
+        <header class="brand">
+          <h1>PROTONS</h1>
+          <p id="summary">Carregando conversas...</p>
+        </header>
+
+        <div class="searchbox">
+          <input id="searchInput" type="search" placeholder="Buscar por nome ou numero" autocomplete="off" />
+        </div>
+
+        <div id="chatList" class="chat-list"></div>
+      </aside>
+
+      <section class="conversation">
+        <header class="conversation-header">
+          <div>
+            <h2 id="chatTitle">Selecione uma conversa</h2>
+            <p id="chatMeta"></p>
+          </div>
+          <button id="exportButton" type="button" disabled>Exportar CSV</button>
+        </header>
+
+        <div id="messages" class="messages empty">
+          <p>Escolha uma conversa na lista para ler as mensagens.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
